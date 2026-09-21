@@ -99,50 +99,117 @@ EconML is a Python library by Microsoft designed specifically for estimating het
 5. **Execution**: Send the campaign to the targeted users.
 6. **Monitoring**: Track performance and feed new data back into the pipeline.
 
-## Complete AI Pipeline
-1. **Data Ingestion & Validation**: Load data, validate schemas, and handle data types.
-2. **Preprocessing**: Encode categorical variables, scale numerical features, and split data.
-3. **Causal Graph Definition**: Construct the Directed Acyclic Graph (DAG) for the business context.
-4. **Propensity & Outcome Modeling**: Train the first-stage models of the DML process.
-5. **Effect Estimation**: Train the final effect model to estimate ITE.
-6. **Robustness Refutation**: Run DoWhy refutation tests to validate the model's integrity.
-7. **Model Serialization**: Save the trained model artifacts for deployment.
+## Complete Causal AI Pipeline
 
-## High-Level System Architecture
-- **Data Layer**: Local CSV/Database for storing historical and real-time customer data.
-- **AI Core (Training)**: A scheduled pipeline that pulls data, trains the Causal Model, runs refutations, and persists the model.
-- **AI Core (Inference)**: A service that loads the serialized model and processes bulk scoring requests for a campaign.
-- **API/Backend**: A RESTful API that the marketing platform calls to get targeted user lists.
-- **Client**: Marketing Automation System.
+```mermaid
+flowchart TD
+    subgraph S1["1. Ingestion & Validation"]
+        D1[("Hillstrom Dataset (64k)")] --> P1["Data Cleaner & Schema Validator"]
+        P1 --> X1["Confounders W & Heterogeneity Covariates X"]
+        P1 --> T1["Treatment T: {No E-Mail, Mens, Womens}"]
+        P1 --> Y1["Outcomes Y: {Visit, Conversion, Spend}"]
+    end
 
-## AI Model Architecture
-- **Framework integration**: DoWhy wrapper around EconML's `LinearDML` or `NonParametricDML`.
-- **First-stage Models**: LightGBM or XGBoost for both Outcome prediction and Treatment propensity prediction.
-- **Final-stage Model**: Linear Regression or Lasso for estimating the heterogeneous effect based on customer features.
+    subgraph S2["2. Identification (DoWhy)"]
+        G1["Structural Causal DAG"] --> ID["Backdoor Identification P(Y|do(T=t))"]
+        X1 & T1 & Y1 --> ID
+    end
 
-## Backend Architecture
-The backend will be designed using clean architecture and SOLID principles:
-- **`config/`**: YAML/JSON based configuration management for hyperparameters and system settings.
-- **`data/`**: Data loaders, schema definitions, and preprocessing transformers.
-- **`models/`**: Abstract base classes for causal models, with specific implementations for DML.
-- **`pipeline/`**: Orchestration of the training and inference workflows.
-- **`api/`**: FastAPI implementation for serving inference requests (future phase).
-- **`utils/`**: Shared utilities for logging, metrics, and plotting.
+    subgraph S3["3. Orthogonal DML (EconML)"]
+        ID --> CF["5-Fold Cross-Fitting Partition"]
+        CF --> NM1["Propensity Model: e(W) = P(T|W) (Calibrated LightGBM)"]
+        CF --> NM2["Outcome Model: m(W) = E[Y|W] (Tweedie LightGBM)"]
+        NM1 & NM2 --> RES["Residuals: T̃ = T - e(W), Ỹ = Y - m(W)"]
+        RES --> DML["CATE Estimation: θ(X) via CausalForestDML / LinearDML"]
+    end
 
-## Expected Outputs
-- A trained Causal AI model capable of scoring users with an ITE value.
-- Clear plots detailing the ATE and the distribution of ITEs across segments.
-- Refutation test reports proving model validity.
-- A ranked CSV/Database table of customers recommended for the next campaign.
-- A fully documented, modular Python codebase.
+    subgraph S4["4. Refutation & Validation"]
+        DML --> R1["Placebo Treatment & Random Confounder Tests"]
+        DML --> R2["Causal Metrics: Qini Score, AUUC, PEHE"]
+    end
+
+    subgraph S5["5. Prescription & Optimization"]
+        DML --> SEG["4-Quadrant Uplift Segmentation"]
+        SEG --> OPT["Knapsack Budget Optimization Engine"]
+        OPT --> REC["Personalized Target Recommendations & Max ROI"]
+    end
+```
+
+---
+
+## Enterprise Causal ML Architecture
+
+For the complete research-grade specification, see [docs/model_architecture.md](file:///d:/Coding/EconoCausal/docs/model_architecture.md).
+
+### 1. Structural Causal Model & Identification
+The system formalizes the marketing intervention as a Structural Causal Model (SCM) $\mathcal{M} = \langle V, U, \mathcal{F}, P(U) \rangle$:
+- **Treatment ($T$)**: Discrete campaign assignment $\in \{0: \text{Control}, 1: \text{Mens E-Mail}, 2: \text{Womens E-Mail}\}$.
+- **Outcomes ($Y$)**: Multi-objective tracking: `visit` (binary engagement), `conversion` (binary intent), `spend` (continuous revenue).
+- **Confounders ($W$) & Effect Modifiers ($X$)**: Customer recency, historical spend, channel, zip code, and merchandise affinity.
+- **Identification**: Satisfies the Backdoor Criterion relative to $(T, Y)$ via adjustment formula:
+  $$P(Y \mid do(T=t)) = \int_{\mathcal{X}} P(Y \mid T=t, X=x) P(X=x) dx$$
+
+### 2. Double Machine Learning (DML) Formulation
+EconoCausal solves the Partially Linear Model with heterogeneous treatment effects:
+$$Y = \theta(X) \cdot T + g(W) + \varepsilon, \quad \mathbb{E}[\varepsilon \mid X, W, T] = 0$$
+$$T = m(W) + \eta, \quad \mathbb{E}[\eta \mid X, W] = 0$$
+
+Using the **Robinson transformation**, we project out confounder effects from both outcome and treatment:
+$$\widetilde{Y} = Y - \mathbb{E}[Y \mid W], \quad \widetilde{T} = T - \mathbb{E}[T \mid W] \implies \widetilde{Y} = \theta(X) \cdot \widetilde{T} + \varepsilon$$
+
+By employing the **Neyman Orthogonal Score**:
+$$\psi(W, Y, T; \theta, \eta) = \Big( (Y - \hat{g}(W)) - \theta(X) (T - \hat{m}(W)) \Big) (T - \hat{m}(W))$$
+The target parameter $\hat{\theta}(X) = \text{CATE}(X)$ is immune to first-stage regularization biases, achieving $\sqrt{n}$-consistency through $5$-fold cross-fitting.
+
+### 3. Estimator Engine Matrix
+- **`LinearDML`**: Regularized linear projection for interpretable parametric baselines with closed-form confidence intervals.
+- **`CausalForestDML`**: Primary production estimator for complex non-linear heterogeneity surfaces without parametric assumptions.
+- **`Meta-Learners` (X-Learner / T-Learner)**: Comparative benchmarks for extreme treatment imbalance.
+
+### 4. Uplift Customer Segmentation (4-Quadrant Framework)
+Customers are categorized based on baseline potential outcome $\mathbb{E}[Y(0) \mid X]$ and predicted treatment effect $\tau(X)$:
+1. **Persuadables** ($\tau(X) > \gamma$): Targeted with highest priority (true positive incremental ROI).
+2. **Sure Things** ($\mathbb{E}[Y(0) \mid X] > \alpha, |\tau(X)| \le \gamma$): Organic purchasers; marketing is withheld to avoid budget waste.
+3. **Lost Causes** ($\mathbb{E}[Y(1) \mid X] \le \alpha, \mathbb{E}[Y(0) \mid X] \le \alpha$): Non-responsive; zero campaign allocation.
+4. **Sleeping Dogs** ($\tau(X) < -\gamma$): Campaign triggers negative response or unsubscribe; strictly excluded.
+
+### 5. Prescriptive Budget Optimization
+The allocation engine solves a constrained mixed-integer optimization problem:
+$$\max_{\{z_{i, t}\}} \sum_{i=1}^N \sum_{t=1}^2 z_{i, t} \cdot \left( \hat{\tau}_{\text{spend}, t}(X_i) \cdot \text{Margin} - c_t \right) \quad \text{s.t.} \quad \sum_{i=1}^N \sum_{t=1}^2 z_{i, t} c_t \le \text{Budget}, \quad \sum_{t=1}^2 z_{i, t} \le 1$$
+Relaxed and solved via greedy marginal return on intervention cost (MROIC) in $O(N \log N)$ time.
+
+### 6. Causal Validation & Metric Suite
+- **Qini Curve & Qini Score**: Quantifies cumulative uplift over random targeting.
+- **AUUC (Area Under Uplift Curve)**: Evaluates ranking quality across targeting percentiles.
+- **DoWhy Refutation Suite**: Falsification via Random Common Cause, Placebo Treatment, and Data Subset refuters.
+- **PEHE Benchmark**: Evaluates CATE mean squared error against a semi-synthetic data-generating oracle.
+
+---
+
+## Modular Pipeline Directory Structure
+
+```text
+EconoCausal/
+├── configs/            # YAML configurations (hyperparameters, causal DAG, logging)
+├── datasets/           # Raw (Hillstrom RCT), processed, and external benchmark data
+├── docs/               # Research notes, feature dictionary, and model architecture specs
+├── experiments/        # Versioned runs: EDA, propensity, DML, tuning, model comparisons
+├── ml/                 # Enterprise Python package (loaders, DML, CATE, optimizers, metrics)
+├── models/             # Serialized transformers, fitted estimators, and SHAP artifacts
+├── notebooks/          # 18 sequential research-grade Jupyter notebooks (01 to 18)
+├── reports/            # Publication-grade uplift plots, Qini curves, and refutation logs
+└── tests/              # Automated unit, schema, and causal integration tests
+```
+
+---
 
 ## Technology Stack
-- **Language**: Python 3.9+
-- **Data Manipulation**: Pandas, NumPy
+- **Language**: Python 3.12+
 - **Causal Inference**: DoWhy, EconML
-- **Machine Learning**: Scikit-Learn, LightGBM / XGBoost
-- **API Framework**: FastAPI (for serving)
-- **Code Quality**: Black, Flake8, Mypy, Pytest
+- **Machine Learning**: Scikit-Learn, LightGBM, XGBoost
+- **Scientific Computing & Optimization**: NumPy, SciPy, Pandas
+- **Explainability**: SHAP (Causal Tree & Kernel Explainer)
+- **Code Quality & Testing**: Pytest, Black, Flake8, Mypy
 
 ## Project Roadmap
 - **Phase 1: Understanding & Design**: Dataset analysis, architecture design, and README generation. *(Completed)*
