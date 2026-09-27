@@ -1,0 +1,20 @@
+{
+    "identification_strategy": "backdoor",
+    "identified_backdoor_variables": [
+        "History",
+        "Recency",
+        "ZipCode",
+        "Channel",
+        "Newbie"
+    ],
+    "effect_modifiers": [
+        "History",
+        "Recency",
+        "Newbie"
+    ],
+    "excluded_colliders": [
+        "Website_Visit"
+    ],
+    "target_1": "conversion",
+    "target_2": "spend"
+}
