@@ -1,0 +1,29 @@
+{
+  "mens_conversion": {
+    "cate_mean": 0.007197635262052001,
+    "cate_std": 0.001785882968990188,
+    "residual_treatment_corr": 0.0016057169396254875,
+    "n_observations": 38264
+  },
+  "womens_conversion": {
+    "cate_mean": 0.0035072867490208554,
+    "cate_std": 0.0026278307842049196,
+    "residual_treatment_corr": -0.00029171036515851626,
+    "n_observations": 38255
+  },
+  "mens_spend": {
+    "cate_mean": 0.8168741176262736,
+    "cate_std": 0.24641215507615846,
+    "residual_treatment_corr": 0.0010792247574853266,
+    "n_observations": 38264
+  },
+  "womens_spend": {
+    "cate_mean": 0.4959517521241912,
+    "cate_std": 0.3747310546660079,
+    "residual_treatment_corr": -0.0008621499492683227,
+    "n_observations": 38255
+  },
+  "cross_fitting_folds": 5,
+  "random_seed": 42,
+  "nuisance_backend": "LightGBM"
+}
