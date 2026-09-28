@@ -1,0 +1,82 @@
+[
+  {
+    "Comparison": "Mens",
+    "Outcome": "Conversion",
+    "Estimator": "LinearDML",
+    "ATE": 0.007197635262052001,
+    "CI_Lower": 0.005188626522946856,
+    "CI_Upper": 0.009206644001157145,
+    "p_value": 2.188341883716384e-12,
+    "Significant_5pct": "Yes"
+  },
+  {
+    "Comparison": "Mens",
+    "Outcome": "Conversion",
+    "Estimator": "CausalForestDML",
+    "ATE": 0.0073420707615818445,
+    "CI_Lower": -0.01006757290572903,
+    "CI_Upper": 0.024751714428892718,
+    "p_value": 0.40848391784638693,
+    "Significant_5pct": "No"
+  },
+  {
+    "Comparison": "Womens",
+    "Outcome": "Conversion",
+    "Estimator": "LinearDML",
+    "ATE": 0.0035072867490208554,
+    "CI_Lower": 0.001702358348423402,
+    "CI_Upper": 0.005312215149618308,
+    "p_value": 0.00013978544509152182,
+    "Significant_5pct": "Yes"
+  },
+  {
+    "Comparison": "Womens",
+    "Outcome": "Conversion",
+    "Estimator": "CausalForestDML",
+    "ATE": 0.003508768155986955,
+    "CI_Lower": -0.012851955504967951,
+    "CI_Upper": 0.019869491816941857,
+    "p_value": 0.6742374217516299,
+    "Significant_5pct": "No"
+  },
+  {
+    "Comparison": "Mens",
+    "Outcome": "Spend",
+    "Estimator": "LinearDML",
+    "ATE": 0.8168741176262736,
+    "CI_Lower": 0.49217000626576296,
+    "CI_Upper": 1.1415782289867842,
+    "p_value": 8.190281890468669e-07,
+    "Significant_5pct": "Yes"
+  },
+  {
+    "Comparison": "Mens",
+    "Outcome": "Spend",
+    "Estimator": "CausalForestDML",
+    "ATE": 0.8389900307166293,
+    "CI_Lower": -2.0874895726276637,
+    "CI_Upper": 3.7654696340609215,
+    "p_value": 0.5741838383353988,
+    "Significant_5pct": "No"
+  },
+  {
+    "Comparison": "Womens",
+    "Outcome": "Spend",
+    "Estimator": "LinearDML",
+    "ATE": 0.4959517521241912,
+    "CI_Lower": 0.2070102315617498,
+    "CI_Upper": 0.7848932726866324,
+    "p_value": 0.0007677502931999695,
+    "Significant_5pct": "Yes"
+  },
+  {
+    "Comparison": "Womens",
+    "Outcome": "Spend",
+    "Estimator": "CausalForestDML",
+    "ATE": 0.502362288472117,
+    "CI_Lower": -2.5434418419707066,
+    "CI_Upper": 3.54816641891494,
+    "p_value": 0.7464920419544496,
+    "Significant_5pct": "No"
+  }
+]
