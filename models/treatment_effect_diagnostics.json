@@ -1,0 +1,73 @@
+{
+    "ate_mens_conversion_dml": 0.007197635262052001,
+    "ate_mens_spend_dml": 0.8168741176262736,
+    "ate_womens_conversion_dml": 0.0035072867490208554,
+    "ate_womens_spend_dml": 0.4959517521241912,
+    "robustness_scorecard": [
+        {
+            "Diagnostic Dimension": "Estimator Concordance (Mens Conv)",
+            "Metric": "Pearson r",
+            "Value": 0.19831064682674873,
+            "Acceptance Threshold": "> 0.70",
+            "Status": "WARN"
+        },
+        {
+            "Diagnostic Dimension": "Estimator Rank Concordance (Mens Conv)",
+            "Metric": "Spearman rho",
+            "Value": 0.2896171545210044,
+            "Acceptance Threshold": "> 0.70",
+            "Status": "WARN"
+        },
+        {
+            "Diagnostic Dimension": "Estimator Concordance (Mens Spend)",
+            "Metric": "Pearson r",
+            "Value": 0.1568525109813439,
+            "Acceptance Threshold": "> 0.70",
+            "Status": "WARN"
+        },
+        {
+            "Diagnostic Dimension": "Multi-Objective Alignment (Conv vs Spend)",
+            "Metric": "Pearson r",
+            "Value": 0.6627076744616867,
+            "Acceptance Threshold": "> 0.50",
+            "Status": "PASS"
+        },
+        {
+            "Diagnostic Dimension": "Law of Total Expectation Identity",
+            "Metric": "|Mean(CATE) - ATE|",
+            "Value": 0.0004980171585660109,
+            "Acceptance Threshold": "< 1e-4",
+            "Status": "FAIL"
+        },
+        {
+            "Diagnostic Dimension": "Neyman Residual Orthogonality (mens_conversion)",
+            "Metric": "Corr(T_res, Y_res)",
+            "Value": 0.0016057169396254875,
+            "Acceptance Threshold": "|r| < 0.05",
+            "Status": "PASS"
+        },
+        {
+            "Diagnostic Dimension": "Neyman Residual Orthogonality (womens_conversion)",
+            "Metric": "Corr(T_res, Y_res)",
+            "Value": -0.00029171036515851626,
+            "Acceptance Threshold": "|r| < 0.05",
+            "Status": "PASS"
+        },
+        {
+            "Diagnostic Dimension": "Neyman Residual Orthogonality (mens_spend)",
+            "Metric": "Corr(T_res, Y_res)",
+            "Value": 0.0010792247574853266,
+            "Acceptance Threshold": "|r| < 0.05",
+            "Status": "PASS"
+        },
+        {
+            "Diagnostic Dimension": "Neyman Residual Orthogonality (womens_spend)",
+            "Metric": "Corr(T_res, Y_res)",
+            "Value": -0.0008621499492683227,
+            "Acceptance Threshold": "|r| < 0.05",
+            "Status": "PASS"
+        }
+    ],
+    "n_customers": 57438,
+    "random_seed": 42
+}
