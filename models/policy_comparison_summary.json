@@ -1,0 +1,30 @@
+{
+    "No Target Baseline": {
+        "Audience Size": 0.0,
+        "Total Spend ($)": 0.0,
+        "Expected Incremental Revenue ($)": 0.0,
+        "Expected Net Profit ($)": 0.0,
+        "ROI (%)": 0.0
+    },
+    "Random Targeting": {
+        "Audience Size": 6000.0,
+        "Total Spend ($)": 15000.0,
+        "Expected Incremental Revenue ($)": 6068.917559473461,
+        "Expected Net Profit ($)": -12572.432976210615,
+        "ROI (%)": -83.8162198414041
+    },
+    "Pure Uplift Ranking": {
+        "Audience Size": 464.0,
+        "Total Spend ($)": 1160.0,
+        "Expected Incremental Revenue ($)": 3569.536847820109,
+        "Expected Net Profit ($)": 267.8147391280436,
+        "ROI (%)": 23.08747751103824
+    },
+    "Segment-Aware Policy": {
+        "Audience Size": 464.0,
+        "Total Spend ($)": 1160.0,
+        "Expected Incremental Revenue ($)": 3569.536847820109,
+        "Expected Net Profit ($)": 267.8147391280436,
+        "ROI (%)": 23.08747751103824
+    }
+}
