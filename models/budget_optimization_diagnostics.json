@@ -1,0 +1,11 @@
+{
+    "assumptions": {
+        "per_contact_cost": 2.5,
+        "gross_margin": 0.4,
+        "total_budget": 15000.0,
+        "average_order_value": 50.0
+    },
+    "checks_passed": true,
+    "total_targets": 464,
+    "total_spend": 1160.0
+}
