@@ -1,0 +1,98 @@
+{
+    "qini_and_auuc_metrics": {
+        "Mens_Spend": {
+            "qini_score": 12778.900604932773,
+            "qini_area_model": 20942.58821193534,
+            "qini_area_random": 8163.687607002568,
+            "auuc_model": 41692.237647212416,
+            "auuc_random": 16283.967189404491,
+            "auuc_lift": 25408.270457807925,
+            "total_incremental_effect": 16329.011189141062
+        },
+        "Mens_Conversion": {
+            "qini_score": 108.06524298333385,
+            "qini_area_model": 180.23192846599284,
+            "qini_area_random": 72.16668548265899,
+            "auuc_model": 357.8947500209552,
+            "auuc_random": 143.94964569193888,
+            "auuc_lift": 213.94510432901632,
+            "total_incremental_effect": 144.34783292280278
+        },
+        "Womens_Spend": {
+            "qini_score": 12053.448552650383,
+            "qini_area_model": 16583.990075644455,
+            "qini_area_random": 4530.541522994072,
+            "auuc_model": 32902.827781515545,
+            "auuc_random": 9039.108478259008,
+            "auuc_lift": 23863.719303256537,
+            "total_incremental_effect": 9061.991378334482
+        },
+        "Womens_Conversion": {
+            "qini_score": 96.23832152741831,
+            "qini_area_model": 129.4376819809305,
+            "qini_area_random": 33.1993604535122,
+            "auuc_model": 256.2979706846374,
+            "auuc_random": 66.23769344680868,
+            "auuc_lift": 190.0602772378287,
+            "total_incremental_effect": 66.40537707667313
+        }
+    },
+    "decile_correlations": {
+        "Mens_Spend": {
+            "spearman_rho": 0.9999999999999999,
+            "p_value": 6.646897422032013e-64
+        },
+        "Mens_Conversion": {
+            "spearman_rho": 0.9999999999999999,
+            "p_value": 6.646897422032013e-64
+        },
+        "Womens_Spend": {
+            "spearman_rho": 0.9999999999999999,
+            "p_value": 6.646897422032013e-64
+        },
+        "Womens_Conversion": {
+            "spearman_rho": 0.9757575757575757,
+            "p_value": 1.4675461874042197e-06
+        }
+    },
+    "pehe_oracle_benchmark": {
+        "oracle_mean_cate": 2.157359980501267,
+        "oracle_std_cate": 4.041273840179992,
+        "pehe_naive_ols": 0.6655496082177064,
+        "rmse_tau_naive_ols": 0.8158122383353331,
+        "pehe_dml": 0.665694036523575,
+        "rmse_tau_dml": 0.8159007516380745,
+        "pehe_reduction_pct": -0.021700607150134308
+    },
+    "refutation_summary": [
+        {
+            "treatment": "Mens E-Mail",
+            "outcome": "spend",
+            "original_effect": 0.8527965303435711,
+            "random_common_cause_effect": 0.8526682329014535,
+            "random_common_cause_shift_pct": 0.015044320350995986,
+            "random_common_cause_passed": true,
+            "placebo_effect": -0.005162346575979741,
+            "placebo_p_value": 0.4810189001319791,
+            "placebo_passed": true,
+            "data_subset_effect": 0.8405409747757083,
+            "data_subset_shift_pct": 1.4371019484042982,
+            "data_subset_passed": true
+        },
+        {
+            "treatment": "Womens E-Mail",
+            "outcome": "spend",
+            "original_effect": 0.4730350654774411,
+            "random_common_cause_effect": 0.47309585348638367,
+            "random_common_cause_shift_pct": 0.012850634815557836,
+            "random_common_cause_passed": true,
+            "placebo_effect": 0.00153086939259524,
+            "placebo_p_value": 0.4965308942217431,
+            "placebo_passed": true,
+            "data_subset_effect": 0.5474181256234558,
+            "data_subset_shift_pct": 15.724639760837267,
+            "data_subset_passed": false
+        }
+    ],
+    "quality_gate_passed": true
+}

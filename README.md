@@ -139,7 +139,7 @@ flowchart TD
 
 ## Enterprise Causal ML Architecture
 
-For the complete research-grade specification, see [docs/model_architecture.md](file:///d:/Coding/EconoCausal/docs/model_architecture.md).
+For the complete research-grade specification, see [docs/model_architecture.md](docs/model_architecture.md).
 
 ### 1. Structural Causal Model & Identification
 The system formalizes the marketing intervention as a Structural Causal Model (SCM) $\mathcal{M} = \langle V, U, \mathcal{F}, P(U) \rangle$:
@@ -196,7 +196,7 @@ EconoCausal/
 ├── experiments/        # Versioned runs: EDA, propensity, DML, tuning, model comparisons
 ├── ml/                 # Enterprise Python package (loaders, DML, CATE, optimizers, metrics)
 ├── models/             # Serialized transformers, fitted estimators, and SHAP artifacts
-├── notebooks/          # 18 sequential research-grade Jupyter notebooks (01 to 18)
+├── notebooks/          # 10 sequential research-grade Jupyter notebooks (01 to 10)
 ├── reports/            # Publication-grade uplift plots, Qini curves, and refutation logs
 └── tests/              # Automated unit, schema, and causal integration tests
 ```

@@ -1,1 +1,21 @@
+# Data Processing & Storage
+numpy
+pandas
+scipy
+fastparquet
 pyarrow
+
+# Machine Learning & Causal Inference
+scikit-learn
+lightgbm
+econml
+dowhy
+
+# Visualization
+matplotlib
+seaborn
+
+# Serialization & Notebook Execution
+joblib
+nbformat
+nbclient
