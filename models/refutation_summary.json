@@ -1,0 +1,30 @@
+[
+    {
+        "treatment": "Mens E-Mail",
+        "outcome": "spend",
+        "original_effect": 0.8527965303435711,
+        "random_common_cause_effect": 0.8526682329014535,
+        "random_common_cause_shift_pct": 0.015044320350995986,
+        "random_common_cause_passed": true,
+        "placebo_effect": -0.005162346575979741,
+        "placebo_p_value": 0.4810189001319791,
+        "placebo_passed": true,
+        "data_subset_effect": 0.8405409747757083,
+        "data_subset_shift_pct": 1.4371019484042982,
+        "data_subset_passed": true
+    },
+    {
+        "treatment": "Womens E-Mail",
+        "outcome": "spend",
+        "original_effect": 0.4730350654774411,
+        "random_common_cause_effect": 0.47309585348638367,
+        "random_common_cause_shift_pct": 0.012850634815557836,
+        "random_common_cause_passed": true,
+        "placebo_effect": 0.00153086939259524,
+        "placebo_p_value": 0.4965308942217431,
+        "placebo_passed": true,
+        "data_subset_effect": 0.5474181256234558,
+        "data_subset_shift_pct": 15.724639760837267,
+        "data_subset_passed": false
+    }
+]

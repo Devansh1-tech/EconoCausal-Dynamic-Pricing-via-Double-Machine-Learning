@@ -445,5 +445,5 @@ In **Notebook 09 (Model Evaluation & Refutation)**, we will use these outputs, a
 - Final model robustness validation to assure the business that the estimated treatment effects are statistically stable and reliable before scaling these recommendations to production.
 """))
 
-with open('d:/Coding/EconoCausal/notebooks/08_budget_optimization_and_recommendation.ipynb', 'w') as f:
+with open('notebooks/08_budget_optimization_and_recommendation.ipynb', 'w', encoding='utf-8') as f:
     nbf.write(nb, f)
