@@ -1,15 +1,17 @@
 # EconoCausal - Project Status & Future Plan
 
 ## 1. What We Have Done Till Now
-We have successfully developed the core Causal AI pipeline up to the budget optimization phase. The following steps have been completed:
-- **Dataset Understanding & EDA:** Analyzed the Hillstrom RCT dataset, finding distributions for conversion (~0.9%) and spend.
-- **Data Preprocessing & Feature Engineering:** Cleaned the data and formulated confounders/covariates (e.g., recency, history, channel).
-- **Causal Formulation:** Designed the structural causal DAG using DoWhy to model relationships between features, treatment (Mens/Womens E-Mail), and outcomes (visit, conversion, spend).
-- **Propensity & Baseline Modeling:** Trained models to predict treatment assignment probabilities.
-- **Double Machine Learning (DML):** Estimated the Individual Treatment Effect (ITE) using EconML, specifically identifying the Conditional Average Treatment Effect (CATE) for conversion and spend.
-- **Customer Segmentation:** Segmented the customer base into 4 quadrants (Persuadables, Sure Things, Lost Causes, Sleeping Dogs) based on uplift.
-- **Budget Optimization:** Developed a Knapsack-based optimization engine to maximize ROI given campaign cost constraints, yielding a recommended target list.
-- **Serialization:** Saved trained models, predictions, customer segments, and optimization summaries to the `models/` directory for downstream use.
+We have successfully developed, validated, and explained the entire 10-stage Causal AI pipeline:
+- **Dataset Understanding & EDA (NB 01):** Analyzed the Hillstrom RCT dataset, finding distributions for conversion (~0.9%) and spend.
+- **Data Preprocessing & Feature Engineering (NB 02):** Cleaned the data, handled mediator topologies (`visit`), and formulated confounders/covariates.
+- **Causal Formulation (NB 03):** Designed the structural causal DAG using DoWhy to model relationships between features, treatment (Mens/Womens E-Mail), and outcomes.
+- **Propensity & Baseline Modeling (NB 04):** Trained calibrated propensity models and estimated IPW weights.
+- **Double Machine Learning (DML) (NB 05):** Estimated Heterogeneous Treatment Effects (CATE) using EconML's `CausalForestDML` with 5-fold orthogonal cross-fitting.
+- **Treatment Effect Estimation (NB 06):** Inferred individual treatment effects for conversion and spend across customer cohorts.
+- **Customer Segmentation (NB 07):** Segmented the customer base into 4 quadrants (Persuadables, Sure Things, Lost Causes, Sleeping Dogs) based on uplift.
+- **Budget Optimization (NB 08):** Developed a Knapsack-based optimization engine maximizing MROIC under budget constraints.
+- **Model Evaluation & Invariance Refutation (NB 09):** Validated causal ranking via Qini curves, AUUC, decile calibration, and passed all Microsoft DoWhy refutations (Placebo Treatment, Random Common Cause, Data Subset).
+- **Explainability & Business Insights (NB 10):** Deconstructed CATE using Causal SHAP, conducted local counterfactual audits, proved +23.1% ROI in executive P&L simulation (beating RFM by 21.8x), and formulated continuous Dynamic Pricing extension.
 
 ## 2. Our Main Model
 The core intelligence of this project relies on **Double Machine Learning (DML)**, integrating DoWhy (for causal assumptions) and EconML (for estimation).
@@ -47,14 +49,21 @@ The frontend will likely be built using **React / Next.js** (or Streamlit for an
 - **Data Export Hub:** Easy one-click download for actionable lists and PDF summary reports.
 
 ## 6. Important Reports & Artifacts Generated
-During the training and evaluation phases, the system has produced several critical reports and artifacts:
+During the training, evaluation, and explainability phases, the system has produced comprehensive publication-grade artifacts:
 - **Visual Reports (in `reports/` directory):**
-  - `uplift_by_quantile.png`: Demonstrates the predicted uplift grouped by customer deciles.
-  - `cate_distributions_mens.png` & `cate_distributions_womens.png`: Distribution of the causal effect for different campaigns.
-  - `cate_feature_importance.png`: Highlights which features influence campaign responsiveness.
-  - `ate_comparison.png` & `ate_comparison_consolidated.png`: Visualizes the Average Treatment Effect.
-- **Data Artifacts (in `models/` directory):**
-  - `customer_segments.parquet`: The categorized customer base based on their causal potential.
-  - `recommended_customer_list.parquet`: The optimized final output list of users to target.
-  - `budget_optimization_diagnostics.json`: Metrics summarizing the efficiency of the allocation strategy.
-  - `uplift_rankings.parquet`: Customers ranked strictly by their incremental potential.
+  - `qini_curves.png`: Cumulative incremental gain and Qini curves proving outperformance over random allocation.
+  - `dowhy_refutation_results.png`: Robustness tests validating estimate invariance.
+  - `causal_shap_summary.png`: Causal SHAP beeswarm attribution plots across conversion and spend.
+  - `executive_pl_comparison.png`: Side-by-side financial P&L flows and ROI across 5 corporate policies.
+  - `quadrant_behavioral_archetypes.png`: Multi-dimensional behavioral profiling across sales channels and geography.
+  - `budget_roi_sensitivity.png`: Diminishing returns curve identifying the optimal capital allocation point ($1,160).
+  - `uplift_by_quantile.png`, `cate_distributions_mens.png`, `ate_comparison.png`: Baseline and CATE distribution charts.
+- **Executive Documentation:**
+  - `reports/executive_summary.md`: C-suite briefing on business impact, ROI, and production governance.
+- **Data & Metric Artifacts (in `models/` directory):**
+  - `customer_segments.parquet`: 4-Quadrant uplift classification for all 57,438 customers.
+  - `recommended_customer_list.parquet`: Knapsack-optimized target recommendations.
+  - `evaluation_metrics.json` & `refutation_summary.json`: Formal validation and sensitivity results.
+  - `explainability_summary.json`: Global SHAP rankings, archetype counterfactual ledger, and dynamic pricing metrics.
+  - `executive_pl_simulation.json`: Complete 5-strategy corporate P&L breakdown.
+

@@ -213,10 +213,25 @@ EconoCausal/
 
 ## Project Roadmap
 - **Phase 1: Understanding & Design**: Dataset analysis, architecture design, and README generation. *(Completed)*
-- **Phase 2: Data Engineering**: Implement robust data loaders and preprocessors.
-- **Phase 3: Causal Modeling**: Implement the DoWhy+EconML DML pipeline.
-- **Phase 4: Evaluation & Refutation**: Add comprehensive metrics, visualizations, and robustness tests.
-- **Phase 5: Productization**: Refactor into a scalable package with configuration management and API endpoints.
+- **Phase 2: Data Engineering**: Implement robust data loaders and preprocessors. *(Completed)*
+- **Phase 3: Causal Modeling**: Implement the DoWhy+EconML DML pipeline. *(Completed)*
+- **Phase 4: Evaluation & Refutation**: Add comprehensive metrics, visualizations, and robustness tests. *(Completed)*
+- **Phase 5: Explainability & Productization**: Causal SHAP, executive P&L simulation, API endpoints & dynamic pricing expansion. *(Completed)*
+
+## Jupyter Research Notebook Suite (10 / 10 Completed)
+
+| # | Notebook | Focus & Methodology | Status |
+| :---: | :--- | :--- | :---: |
+| **01** | [01_dataset_understanding_and_eda.ipynb](notebooks/01_dataset_understanding_and_eda.ipynb) | RCT Dataset Analysis, Class Imbalance, Descriptive Statistics | Completed |
+| **02** | [02_data_preprocessing_and_feature_engineering.ipynb](notebooks/02_data_preprocessing_and_feature_engineering.ipynb) | Confounder Isolation, One-Hot Encoding, Transformation | Completed |
+| **03** | [03_causal_problem_formulation.ipynb](notebooks/03_causal_problem_formulation.ipynb) | Structural Causal DAG, DoWhy Backdoor Identification | Completed |
+| **04** | [04_baseline_models.ipynb](notebooks/04_baseline_models.ipynb) | Propensity Modeling, Calibrated LightGBM, IPW Weights | Completed |
+| **05** | [05_double_machine_learning.ipynb](notebooks/05_double_machine_learning.ipynb) | Neyman-Orthogonal Score Minimization, 5-Fold Cross-Fitting | Completed |
+| **06** | [06_treatment_effect_estimation.ipynb](notebooks/06_treatment_effect_estimation.ipynb) | Heterogeneous CATE Inference, Cohort Effect Analysis | Completed |
+| **07** | [07_customer_segmentation_and_campaign_strategy.ipynb](notebooks/07_customer_segmentation_and_campaign_strategy.ipynb) | 4-Quadrant Uplift Framework (Persuadables, Sure Things, etc.) | Completed |
+| **08** | [08_budget_optimization_and_recommendation.ipynb](notebooks/08_budget_optimization_and_recommendation.ipynb) | Knapsack Optimization Engine, Constrained Capital Allocation | Completed |
+| **09** | [09_model_evaluation_and_refutation.ipynb](notebooks/09_model_evaluation_and_refutation.ipynb) | Qini Curves, AUUC, Decile Calibration, DoWhy Invariance Suite | Completed |
+| **10** | [10_explainability_and_final_business_insights.ipynb](notebooks/10_explainability_and_final_business_insights.ipynb) | Causal SHAP, Micro-Decisions, 5-Strategy P&L, Dynamic Pricing | Completed |
 
 ## Future Scope
 - **Multi-Treatment Support**: Extending the model to evaluate multiple competing campaigns simultaneously (e.g., $10 vs $20 discount).
