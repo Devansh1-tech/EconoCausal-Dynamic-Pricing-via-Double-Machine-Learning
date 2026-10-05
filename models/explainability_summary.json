@@ -1,0 +1,82 @@
+{
+    "shap_global_importance": [
+        {
+            "Feature": "history",
+            "Mean |SHAP| Conversion Uplift": 0.004182792225265882,
+            "Conversion Rank": 1,
+            "Mean |SHAP| Spend Uplift ($)": 0.6775251528410537,
+            "Spend Rank": 1
+        },
+        {
+            "Feature": "recency",
+            "Mean |SHAP| Conversion Uplift": 0.0020325053880029227,
+            "Conversion Rank": 2,
+            "Mean |SHAP| Spend Uplift ($)": 0.3008930862006339,
+            "Spend Rank": 2
+        },
+        {
+            "Feature": "newbie",
+            "Mean |SHAP| Conversion Uplift": 0.0010833522126563867,
+            "Conversion Rank": 3,
+            "Mean |SHAP| Spend Uplift ($)": 0.18974592549631547,
+            "Spend Rank": 3
+        }
+    ],
+    "archetype_audit_ledger": [
+        {
+            "Archetype": "1. Persuadable (Target)",
+            "Customer ID": 73,
+            "History ($)": "$612.28",
+            "Recency (m)": "7 mo",
+            "Newbie": "Yes",
+            "CATE Conversion": "+1.82%",
+            "CATE Spend": "$+2.42",
+            "Recommended Action": "DO NOT TARGET",
+            "Business Rationale": "High incremental lift; responsive to promotion"
+        },
+        {
+            "Archetype": "2. Sure Thing (Do Not Target)",
+            "Customer ID": 39,
+            "History ($)": "$520.43",
+            "Recency (m)": "7 mo",
+            "Newbie": "Yes",
+            "CATE Conversion": "+0.61%",
+            "CATE Spend": "$+1.20",
+            "Recommended Action": "DO NOT TARGET",
+            "Business Rationale": "High organic conversion; campaign wastes budget"
+        },
+        {
+            "Archetype": "3. Sleeping Dog (Do Not Contact)",
+            "Customer ID": 94,
+            "History ($)": "$1973.87",
+            "Recency (m)": "3 mo",
+            "Newbie": "Yes",
+            "CATE Conversion": "-1.24%",
+            "CATE Spend": "$-0.58",
+            "Recommended Action": "DO NOT TARGET",
+            "Business Rationale": "Negative incremental lift; marketing triggers churn"
+        },
+        {
+            "Archetype": "4. Lost Cause (Ignore)",
+            "Customer ID": 34,
+            "History ($)": "$29.99",
+            "Recency (m)": "3 mo",
+            "Newbie": "No",
+            "CATE Conversion": "+1.20%",
+            "CATE Spend": "$+4.80",
+            "Recommended Action": "DO NOT TARGET",
+            "Business Rationale": "Near-zero response; low engagement probability"
+        }
+    ],
+    "optimal_budget_saturation_point": {
+        "optimal_budget_usd": 1006.4102564102565,
+        "optimal_net_profit_usd": 262.7841870306594,
+        "optimal_target_count": 464
+    },
+    "dynamic_pricing_simulation": {
+        "marginal_cost": 20.0,
+        "uniform_profit": 5240102.505384083,
+        "dynamic_profit": 5441691.5134467445,
+        "profit_lift_pct": 3.847043218248758
+    }
+}
