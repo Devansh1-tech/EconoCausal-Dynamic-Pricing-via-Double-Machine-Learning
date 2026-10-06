@@ -1,26 +1,5 @@
 {
-    "dataset": "Kevin Hillstrom MineThatData E-Mail Analytics",
-    "total_rows": 57438,
-    "treatment": "segment",
-    "treatment_col": "treatment",
-    "treatment_mapping": {
-        "No E-Mail": 0,
-        "Mens E-Mail": 1,
-        "Womens E-Mail": 2
-    },
-    "treatment_levels": {
-        "0": "No E-Mail",
-        "1": "Mens E-Mail",
-        "2": "Womens E-Mail"
-    },
-    "outcomes": [
-        "conversion",
-        "spend"
-    ],
-    "mediators_excluded": [
-        "visit"
-    ],
-    "confounders": [
+    "covariates": [
         "recency",
         "history_segment",
         "history",
@@ -30,23 +9,15 @@
         "newbie",
         "channel"
     ],
-    "effect_modifiers": [
-        "history",
-        "recency",
-        "newbie"
+    "treatment": "segment",
+    "outcomes": [
+        "visit",
+        "conversion",
+        "spend"
     ],
-    "numeric_features": [
-        "recency",
-        "history"
-    ],
-    "binary_features": [
-        "mens",
-        "womens",
-        "newbie"
-    ],
-    "categorical_features": [
-        "zip_code",
-        "channel",
-        "history_segment"
+    "treatment_levels": [
+        "No E-Mail",
+        "Mens E-Mail",
+        "Womens E-Mail"
     ]
 }

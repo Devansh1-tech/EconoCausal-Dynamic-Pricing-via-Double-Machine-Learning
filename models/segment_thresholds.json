@@ -1,11 +1,11 @@
 {
     "conversion": {
-        "persuadable_gamma": 0.012212125350202307,
-        "sleeping_dog_gamma": -0.0032757581807652757
+        "persuadable_gamma": 0.012319106539142553,
+        "sleeping_dog_gamma": -0.0034451481026715304
     },
     "spend": {
-        "persuadable_gamma": 1.4436055144516047,
-        "sleeping_dog_gamma": -0.5311519048430366
+        "persuadable_gamma": 1.4605885345731462,
+        "sleeping_dog_gamma": -0.49719702759212137
     },
     "baseline_alpha_proxy": 307.77899999999994
 }

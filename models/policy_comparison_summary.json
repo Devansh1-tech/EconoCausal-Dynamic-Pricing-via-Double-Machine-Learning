@@ -9,22 +9,22 @@
     "Random Targeting": {
         "Audience Size": 6000.0,
         "Total Spend ($)": 15000.0,
-        "Expected Incremental Revenue ($)": 6068.917559473461,
-        "Expected Net Profit ($)": -12572.432976210615,
-        "ROI (%)": -83.8162198414041
+        "Expected Incremental Revenue ($)": 6345.377281366703,
+        "Expected Net Profit ($)": -12461.849087453318,
+        "ROI (%)": -83.07899391635546
     },
     "Pure Uplift Ranking": {
-        "Audience Size": 464.0,
-        "Total Spend ($)": 1160.0,
-        "Expected Incremental Revenue ($)": 3569.536847820109,
-        "Expected Net Profit ($)": 267.8147391280436,
-        "ROI (%)": 23.08747751103824
+        "Audience Size": 439.0,
+        "Total Spend ($)": 1097.5,
+        "Expected Incremental Revenue ($)": 3498.891619315712,
+        "Expected Net Profit ($)": 302.05664772628484,
+        "ROI (%)": 27.5222458064952
     },
     "Segment-Aware Policy": {
-        "Audience Size": 464.0,
-        "Total Spend ($)": 1160.0,
-        "Expected Incremental Revenue ($)": 3569.536847820109,
-        "Expected Net Profit ($)": 267.8147391280436,
-        "ROI (%)": 23.08747751103824
+        "Audience Size": 439.0,
+        "Total Spend ($)": 1097.5,
+        "Expected Incremental Revenue ($)": 3498.891619315712,
+        "Expected Net Profit ($)": 302.05664772628484,
+        "ROI (%)": 27.5222458064952
     }
 }
