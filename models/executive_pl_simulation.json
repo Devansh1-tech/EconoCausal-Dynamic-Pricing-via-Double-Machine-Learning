@@ -11,37 +11,37 @@
     "2. Blanket Blast (Spray & Pray)": {
         "Audience Size": 57438,
         "Campaign Cost ($)": 143595.0,
-        "Incremental Revenue ($)": 48168.92660628271,
-        "Gross Profit ($)": 19267.570642513085,
-        "Net Incremental Profit ($)": -124327.42935748692,
-        "Incremental ROI (%)": -86.58200449701377,
-        "Cost Per Incremental Customer ($)": 340.4821910214273
+        "Incremental Revenue ($)": 48333.01264707783,
+        "Gross Profit ($)": 19333.205058831132,
+        "Net Incremental Profit ($)": -124261.79494116886,
+        "Incremental ROI (%)": -86.53629648746048,
+        "Cost Per Incremental Customer ($)": 342.557683777416
     },
     "3. Random Allocation ($15k)": {
         "Audience Size": 6000,
         "Campaign Cost ($)": 15000.0,
-        "Incremental Revenue ($)": 4883.565584775139,
-        "Gross Profit ($)": 1953.4262339100555,
-        "Net Incremental Profit ($)": -13046.573766089945,
-        "Incremental ROI (%)": -86.97715844059964,
-        "Cost Per Incremental Customer ($)": 351.79626870154334
+        "Incremental Revenue ($)": 4860.5217300590975,
+        "Gross Profit ($)": 1944.208692023639,
+        "Net Incremental Profit ($)": -13055.79130797636,
+        "Incremental ROI (%)": -87.0386087198424,
+        "Cost Per Incremental Customer ($)": 353.5044499799936
     },
     "4. Heuristic RFM (Top Spenders)": {
         "Audience Size": 464,
         "Campaign Cost ($)": 1160.0,
-        "Incremental Revenue ($)": 163.67235783438255,
-        "Gross Profit ($)": 65.46894313375303,
-        "Net Incremental Profit ($)": -1094.531056866247,
-        "Incremental ROI (%)": -94.35612559191784,
-        "Cost Per Incremental Customer ($)": 614.6638132025757
+        "Incremental Revenue ($)": 206.1420180510935,
+        "Gross Profit ($)": 82.4568072204374,
+        "Net Incremental Profit ($)": -1077.5431927795626,
+        "Incremental ROI (%)": -92.89165454996228,
+        "Cost Per Incremental Customer ($)": 1073.4496404292881
     },
     "5. EconoCausal (Causal Knapsack)": {
-        "Audience Size": 464,
-        "Campaign Cost ($)": 1160.0,
-        "Incremental Revenue ($)": 3569.536847820109,
-        "Gross Profit ($)": 1427.8147391280436,
-        "Net Incremental Profit ($)": 267.8147391280436,
-        "Incremental ROI (%)": 23.08747751103824,
-        "Cost Per Incremental Customer ($)": 77.99768551383018
+        "Audience Size": 439,
+        "Campaign Cost ($)": 1097.5,
+        "Incremental Revenue ($)": 3498.8916193157115,
+        "Gross Profit ($)": 1399.5566477262846,
+        "Net Incremental Profit ($)": 302.0566477262846,
+        "Incremental ROI (%)": 27.52224580649518,
+        "Cost Per Incremental Customer ($)": 82.4810595402847
     }
 }

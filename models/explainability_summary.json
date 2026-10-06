@@ -2,35 +2,35 @@
     "shap_global_importance": [
         {
             "Feature": "history",
-            "Mean |SHAP| Conversion Uplift": 0.004182792225265882,
+            "Mean |SHAP| Conversion Uplift": 0.004250868840938043,
             "Conversion Rank": 1,
-            "Mean |SHAP| Spend Uplift ($)": 0.6775251528410537,
+            "Mean |SHAP| Spend Uplift ($)": 0.6751867739204019,
             "Spend Rank": 1
         },
         {
             "Feature": "recency",
-            "Mean |SHAP| Conversion Uplift": 0.0020325053880029227,
+            "Mean |SHAP| Conversion Uplift": 0.0021620689509139765,
             "Conversion Rank": 2,
-            "Mean |SHAP| Spend Uplift ($)": 0.3008930862006339,
+            "Mean |SHAP| Spend Uplift ($)": 0.2988630222848166,
             "Spend Rank": 2
         },
         {
             "Feature": "newbie",
-            "Mean |SHAP| Conversion Uplift": 0.0010833522126563867,
+            "Mean |SHAP| Conversion Uplift": 0.0011036789372510143,
             "Conversion Rank": 3,
-            "Mean |SHAP| Spend Uplift ($)": 0.18974592549631547,
+            "Mean |SHAP| Spend Uplift ($)": 0.1976835564599717,
             "Spend Rank": 3
         }
     ],
     "archetype_audit_ledger": [
         {
             "Archetype": "1. Persuadable (Target)",
-            "Customer ID": 73,
-            "History ($)": "$612.28",
-            "Recency (m)": "7 mo",
-            "Newbie": "Yes",
-            "CATE Conversion": "+1.82%",
-            "CATE Spend": "$+2.42",
+            "Customer ID": 72,
+            "History ($)": "$428.74",
+            "Recency (m)": "2 mo",
+            "Newbie": "No",
+            "CATE Conversion": "+1.62%",
+            "CATE Spend": "$+1.57",
             "Recommended Action": "DO NOT TARGET",
             "Business Rationale": "High incremental lift; responsive to promotion"
         },
@@ -40,19 +40,19 @@
             "History ($)": "$520.43",
             "Recency (m)": "7 mo",
             "Newbie": "Yes",
-            "CATE Conversion": "+0.61%",
-            "CATE Spend": "$+1.20",
+            "CATE Conversion": "+0.76%",
+            "CATE Spend": "$+1.00",
             "Recommended Action": "DO NOT TARGET",
             "Business Rationale": "High organic conversion; campaign wastes budget"
         },
         {
             "Archetype": "3. Sleeping Dog (Do Not Contact)",
-            "Customer ID": 94,
-            "History ($)": "$1973.87",
-            "Recency (m)": "3 mo",
-            "Newbie": "Yes",
-            "CATE Conversion": "-1.24%",
-            "CATE Spend": "$-0.58",
+            "Customer ID": 98,
+            "History ($)": "$106.27",
+            "Recency (m)": "1 mo",
+            "Newbie": "No",
+            "CATE Conversion": "-0.46%",
+            "CATE Spend": "$+0.54",
             "Recommended Action": "DO NOT TARGET",
             "Business Rationale": "Negative incremental lift; marketing triggers churn"
         },
@@ -62,15 +62,15 @@
             "History ($)": "$29.99",
             "Recency (m)": "3 mo",
             "Newbie": "No",
-            "CATE Conversion": "+1.20%",
-            "CATE Spend": "$+4.80",
+            "CATE Conversion": "+0.76%",
+            "CATE Spend": "$+4.59",
             "Recommended Action": "DO NOT TARGET",
             "Business Rationale": "Near-zero response; low engagement probability"
         }
     ],
     "optimal_budget_saturation_point": {
         "optimal_budget_usd": 1006.4102564102565,
-        "optimal_net_profit_usd": 262.7841870306594,
+        "optimal_net_profit_usd": 299.4784172212493,
         "optimal_target_count": 464
     },
     "dynamic_pricing_simulation": {

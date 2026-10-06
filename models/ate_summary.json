@@ -1,82 +1,82 @@
 [
-  {
-    "Comparison": "Mens",
-    "Outcome": "Conversion",
-    "Estimator": "LinearDML",
-    "ATE": 0.007197635262052001,
-    "CI_Lower": 0.005188626522946856,
-    "CI_Upper": 0.009206644001157145,
-    "p_value": 2.188341883716384e-12,
-    "Significant_5pct": "Yes"
-  },
-  {
-    "Comparison": "Mens",
-    "Outcome": "Conversion",
-    "Estimator": "CausalForestDML",
-    "ATE": 0.0073420707615818445,
-    "CI_Lower": -0.01006757290572903,
-    "CI_Upper": 0.024751714428892718,
-    "p_value": 0.40848391784638693,
-    "Significant_5pct": "No"
-  },
-  {
-    "Comparison": "Womens",
-    "Outcome": "Conversion",
-    "Estimator": "LinearDML",
-    "ATE": 0.0035072867490208554,
-    "CI_Lower": 0.001702358348423402,
-    "CI_Upper": 0.005312215149618308,
-    "p_value": 0.00013978544509152182,
-    "Significant_5pct": "Yes"
-  },
-  {
-    "Comparison": "Womens",
-    "Outcome": "Conversion",
-    "Estimator": "CausalForestDML",
-    "ATE": 0.003508768155986955,
-    "CI_Lower": -0.012851955504967951,
-    "CI_Upper": 0.019869491816941857,
-    "p_value": 0.6742374217516299,
-    "Significant_5pct": "No"
-  },
-  {
-    "Comparison": "Mens",
-    "Outcome": "Spend",
-    "Estimator": "LinearDML",
-    "ATE": 0.8168741176262736,
-    "CI_Lower": 0.49217000626576296,
-    "CI_Upper": 1.1415782289867842,
-    "p_value": 8.190281890468669e-07,
-    "Significant_5pct": "Yes"
-  },
-  {
-    "Comparison": "Mens",
-    "Outcome": "Spend",
-    "Estimator": "CausalForestDML",
-    "ATE": 0.8389900307166293,
-    "CI_Lower": -2.0874895726276637,
-    "CI_Upper": 3.7654696340609215,
-    "p_value": 0.5741838383353988,
-    "Significant_5pct": "No"
-  },
-  {
-    "Comparison": "Womens",
-    "Outcome": "Spend",
-    "Estimator": "LinearDML",
-    "ATE": 0.4959517521241912,
-    "CI_Lower": 0.2070102315617498,
-    "CI_Upper": 0.7848932726866324,
-    "p_value": 0.0007677502931999695,
-    "Significant_5pct": "Yes"
-  },
-  {
-    "Comparison": "Womens",
-    "Outcome": "Spend",
-    "Estimator": "CausalForestDML",
-    "ATE": 0.502362288472117,
-    "CI_Lower": -2.5434418419707066,
-    "CI_Upper": 3.54816641891494,
-    "p_value": 0.7464920419544496,
-    "Significant_5pct": "No"
-  }
+    {
+        "Comparison": "Mens",
+        "Outcome": "Conversion",
+        "Estimator": "LinearDML",
+        "ATE": 0.00716807982730353,
+        "CI_Lower": 0.005158895267452977,
+        "CI_Upper": 0.009177264387154084,
+        "p_value": 2.7007338531715205e-12,
+        "Significant_5pct": "Yes"
+    },
+    {
+        "Comparison": "Mens",
+        "Outcome": "Conversion",
+        "Estimator": "CausalForestDML",
+        "ATE": 0.007289533758060087,
+        "CI_Lower": -0.010207490656358592,
+        "CI_Upper": 0.024786558172478757,
+        "p_value": 0.0,
+        "Significant_5pct": "Yes"
+    },
+    {
+        "Comparison": "Womens",
+        "Outcome": "Conversion",
+        "Estimator": "LinearDML",
+        "ATE": 0.0036290363811943313,
+        "CI_Lower": 0.001816590764484901,
+        "CI_Upper": 0.005441481997903761,
+        "p_value": 8.694237489433821e-05,
+        "Significant_5pct": "Yes"
+    },
+    {
+        "Comparison": "Womens",
+        "Outcome": "Conversion",
+        "Estimator": "CausalForestDML",
+        "ATE": 0.0036383270672986747,
+        "CI_Lower": -0.013147389523261301,
+        "CI_Upper": 0.020424043657858645,
+        "p_value": 0.0,
+        "Significant_5pct": "Yes"
+    },
+    {
+        "Comparison": "Mens",
+        "Outcome": "Spend",
+        "Estimator": "LinearDML",
+        "ATE": 0.8238526787487119,
+        "CI_Lower": 0.4999566831273313,
+        "CI_Upper": 1.1477486743700924,
+        "p_value": 6.186290767375847e-07,
+        "Significant_5pct": "Yes"
+    },
+    {
+        "Comparison": "Mens",
+        "Outcome": "Spend",
+        "Estimator": "CausalForestDML",
+        "ATE": 0.841911678375643,
+        "CI_Lower": 0.0,
+        "CI_Upper": 0.0,
+        "p_value": 0.0,
+        "Significant_5pct": "Yes"
+    },
+    {
+        "Comparison": "Womens",
+        "Outcome": "Spend",
+        "Estimator": "LinearDML",
+        "ATE": 0.4985595355542312,
+        "CI_Lower": 0.20835107509896733,
+        "CI_Upper": 0.7887679960094951,
+        "p_value": 0.0007596520038009053,
+        "Significant_5pct": "Yes"
+    },
+    {
+        "Comparison": "Womens",
+        "Outcome": "Spend",
+        "Estimator": "CausalForestDML",
+        "ATE": 0.5012719308850287,
+        "CI_Lower": 0.0,
+        "CI_Upper": 0.0,
+        "p_value": 0.0,
+        "Significant_5pct": "Yes"
+    }
 ]

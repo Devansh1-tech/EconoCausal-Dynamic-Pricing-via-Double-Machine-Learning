@@ -16,10 +16,10 @@
 | Strategy | Audience Size | Campaign Cost ($) | Incremental Revenue ($) | Gross Profit ($) | Net Incremental Profit ($) | Incremental ROI (%) | Cost Per Incremental Customer ($) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 1. Status Quo (No Target) | 0 | $0.00 | $0.00 | $0.00 | $0.00 | +0.00% | $0.00 |
-| 2. Blanket Blast (Spray & Pray) | 57,438 | $143,595.00 | $48,168.93 | $19,267.57 | $-124,327.43 | -86.58% | $340.48 |
-| 3. Random Allocation ($15k) | 6,000 | $15,000.00 | $4,883.57 | $1,953.43 | $-13,046.57 | -86.98% | $351.80 |
-| 4. Heuristic RFM (Top Spenders) | 464 | $1,160.00 | $163.67 | $65.47 | $-1,094.53 | -94.36% | $614.66 |
-| 5. EconoCausal (Causal Knapsack) | 464 | $1,160.00 | $3,569.54 | $1,427.81 | $267.81 | +23.09% | $78.00 |
+| 2. Blanket Blast (Spray & Pray) | 57,438 | $143,595.00 | $48,333.01 | $19,333.21 | $-124,261.79 | -86.54% | $342.56 |
+| 3. Random Allocation ($15k) | 6,000 | $15,000.00 | $4,860.52 | $1,944.21 | $-13,055.79 | -87.04% | $353.50 |
+| 4. Heuristic RFM (Top Spenders) | 464 | $1,160.00 | $206.14 | $82.46 | $-1,077.54 | -92.89% | $1,073.45 |
+| 5. EconoCausal (Causal Knapsack) | 439 | $1,097.50 | $3,498.89 | $1,399.56 | $302.06 | +27.52% | $82.48 |
 
 ## 3. Production Governance Blueprint
 - **Universal 5% Holdout:** Active A/B monitoring against ground truth.
