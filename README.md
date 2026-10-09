@@ -259,6 +259,29 @@ To verify backend routing, serialization, and correct treatment effect outputs, 
 pytest tests/ -v
 ```
 
+## Frontend Application Run Instructions
+
+The project includes a fully integrated React/Vite dashboard to interact with the Causal AI models.
+
+**1. Navigate to the frontend directory**
+```bash
+cd frontend
+```
+
+**2. Install Dependencies**
+```bash
+npm install
+```
+
+**3. Start the Vite Development Server**
+```bash
+npm run dev
+```
+
+**4. View the Application**
+Open your browser and navigate to the URL provided by Vite (typically `http://localhost:5173` or `5174`).
+The application is pre-configured to proxy `/api` requests automatically to the FastAPI backend running on port 8000.
+
 ## Future Scope
 - **Multi-Treatment Support**: Extending the model to evaluate multiple competing campaigns simultaneously (e.g., $10 vs $20 discount).
 - **Uplift Modeling Integration**: Comparing DML results with traditional Meta-Learners (T-Learner, S-Learner).
