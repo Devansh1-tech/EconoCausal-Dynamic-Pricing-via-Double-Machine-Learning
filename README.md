@@ -233,6 +233,32 @@ EconoCausal/
 | **09** | [09_model_evaluation_and_refutation.ipynb](notebooks/09_model_evaluation_and_refutation.ipynb) | Qini Curves, AUUC, Decile Calibration, DoWhy Invariance Suite | Completed |
 | **10** | [10_explainability_and_final_business_insights.ipynb](notebooks/10_explainability_and_final_business_insights.ipynb) | Causal SHAP, Micro-Decisions, 5-Strategy P&L, Dynamic Pricing | Completed |
 
+## Backend API Run Instructions
+
+The FastAPI backend exposes the causal ML model artifacts produced by the notebook pipeline as an inference service.
+
+**1. Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+**2. Start the Server**
+Ensure you are in the root directory (where `app/` is located) and run:
+```bash
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+**3. Test the API (Smoke Test)**
+The API will load all `.joblib` and `.json` artifacts from the `models/` directory exactly once on startup.
+You can view the interactive documentation and test endpoints at:
+[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+**4. Run Automated Tests**
+To verify backend routing, serialization, and correct treatment effect outputs, run:
+```bash
+pytest tests/ -v
+```
+
 ## Future Scope
 - **Multi-Treatment Support**: Extending the model to evaluate multiple competing campaigns simultaneously (e.g., $10 vs $20 discount).
 - **Uplift Modeling Integration**: Comparing DML results with traditional Meta-Learners (T-Learner, S-Learner).
