@@ -19,3 +19,8 @@ seaborn
 joblib
 nbformat
 nbclient
+
+# Backend API
+fastapi
+uvicorn
+pydantic
